@@ -1,15 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ include file="../layout/header.jsp" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html>
+<div class="container">
+	<form>
+		<div class="form-group">
+			<label for="username">Username</label> <input type="text" class="form-control" placeholder="Enter username" id="username">
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label> <input type="password" class="form-control" placeholder="Enter password" id="password">
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label> <input type="email" class="form-control" placeholder="Enter email" id="email">
+		</div>
+	</form>
+	<button id="btn-save" class="btn btn-primary">회원가입 완료</button>
+</div>
 
 <%@ include file="../layout/footer.jsp" %>
