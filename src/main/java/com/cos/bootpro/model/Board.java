@@ -36,10 +36,8 @@ public class Board {
 	@Lob
 	private String content;
 	
-	@ColumnDefault("0")
 	private int count;
 	
-	@ColumnDefault("0")
 	private int recommend;
 	
 	// 연관관계 Many(Board) : one(User)

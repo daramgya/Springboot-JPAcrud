@@ -1,7 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ include file="layout/header.jsp"%>
+<%@ page import="java.util.Date" %>
 <div class="container">
 
+
+	<c:forEach var="board" items="${boards}">
+		<table class="table table-hover">
+		<thead>
+			<tr>
+				<th width="50%">제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+				<th>조회</th>
+				<th>추천</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>${board.title}</td>
+				<td>${board.user.username}</td>
+				<td>${board.createDate}</td>
+				<td>${board.count}</td>
+				<td>${board.recommend}</td>
+			</tr>
+
+		</tbody>
+	</table>
+	
+	
+	
+	</c:forEach>
+
+
+	<!-- 게시판 양식
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -27,8 +58,11 @@
 				<td>16</td>
 				<td>2</td>
 			</tr>
-
 		</tbody>
 	</table>
+	
+	-->
+	
+	
 </div>
 <%@ include file="layout/footer.jsp"%>
