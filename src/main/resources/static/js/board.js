@@ -4,6 +4,9 @@ let index = {
 			$("#btn-save").on("click", ()=>{ 
 				this.save();
 			}); 
+			$("#btn-delete").on("click", ()=>{
+				this.deleteById();
+			});  
 			$("#btn-update").on("click", ()=>{
 				this.update();
 			});  
@@ -25,28 +28,42 @@ let index = {
 			}).done(function(resp){
 				alert("글 작성이 완료되었습니다.");
 				location.href = "/";
-				console.log(resp);
+			}).fail(function(error){
+				alert(JSON.stringify(error));
+			});
+		},
+		
+		deleteById: function() {
+
+			var id = $("#id").text();
+			$.ajax({
+				type: "DELETE",
+				url: "/api/board/"+id, 
+				dataType: "json"
+			}).done(function(resp){
+				alert("삭제가 완료되었습니다.");
+				location.href = "/";
 			}).fail(function(error){
 				alert(JSON.stringify(error));
 			});
 		},
 		
 		update: function() {
-			let data = {
-				id: $("#id").val(),
-				username: $("#username").val(),
-				password: $("#password").val(),
-				email: $("#email").val()
-			}
+			let id = $("#id").val()
 			
+			let data = {
+				title: $("#title").val(),
+				content: $("#content").val(),
+			}
+
 			$.ajax({
 				type: "PUT",
-				url: "/user", 
+				url: "/api/board/"+id, // 요청할 url
 				data: JSON.stringify(data), 
 				contentType: "application/json; charset=utf-8", 
 				dataType: "json" 
-			}).done(function(resp){  
-				alert("회원수정이 완료되었습니다.");
+			}).done(function(resp){ 
+				alert("글 수정이 완료되었습니다.");
 				location.href = "/";
 			}).fail(function(error){
 				alert(JSON.stringify(error));
