@@ -34,17 +34,19 @@
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link" href="/auth/loginForm">로그인</a></li>
 					<li class="nav-item"><a class="nav-link" href="/auth/joinForm">회원가입</a></li>
+					
 				</ul>
 			</c:when>
 			<c:otherwise>
 
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="/board/saveForm">글쓰기</a></li>
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> 내 정보 </a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">포인트 확인</a> <a class="dropdown-item" href="/user/userForm">내 정보 수정</a> <a class="dropdown-item" href="/logout">로그아웃</a>
 						</div>
 					</li>
+					<li class="nav-item"><a class="nav-link" href="/board/saveForm">글쓰기</a></li>
+					<li class="nav-item"><a class="nav-link" href="/chat/chatRoom">채팅방 입장</a></li>
 				</ul>
 			</c:otherwise>
 		</c:choose>
